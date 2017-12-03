@@ -10,9 +10,9 @@ class FileClass {
     }
 
     void workWithFiles() throws IOException {
-        File inputDataFile = new File("D:\\222\\LastVersion", "inputData.txt");
-        File outputEncryptedFile = new File("D:\\222\\LastVersion", "encryptedData.txt");
-        File outputDecryptedFile = new File("D:\\222\\LastVersion", "decryptedData.txt");
+        File inputDataFile = new File("D:\\222", "Безымянный.png");
+        File outputEncryptedFile = new File("D:\\222","encryptedData.png");
+        File outputDecryptedFile = new File("D:\\222","outputData.png");
 
         FileInputStream fileInputStream;
         FileOutputStream fileOutputStream;
