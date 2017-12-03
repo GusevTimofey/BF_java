@@ -27,7 +27,7 @@
       <file leaf-file-name="FileClass.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Encrypt/FileClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-204">
+            <state relative-caret-position="0">
               <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
               <folding>
                 <element signature="method#FileClass#0;class#FileClass#0" expanded="false" />
@@ -36,10 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BlowFish.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BlowFish.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Encrypt/BlowFish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="867">
+            <state relative-caret-position="619">
               <caret line="209" column="17" lean-forward="false" selection-start-line="209" selection-start-column="17" selection-end-line="209" selection-end-column="17" />
               <folding>
                 <element signature="method#setupKey#0;class#BlowFish#0" expanded="false" />
@@ -49,10 +49,22 @@
                 <element signature="method#encryptBlock64#0;class#BlowFish#0" expanded="false" />
                 <element signature="method#setBlock#0;class#BlowFish#0" expanded="false" />
                 <element signature="method#decryptBlock64#0;class#BlowFish#0" expanded="false" />
+                <element signature="e#6766#6767#0" expanded="true" />
+                <element signature="e#6809#6810#0" expanded="true" />
                 <element signature="method#bytesToLong#0;class#BlowFish#0" expanded="false" />
                 <element signature="method#longToBytes#0;class#BlowFish#0" expanded="false" />
                 <element signature="method#byte2int#0;class#BlowFish#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,6 +88,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -88,6 +103,7 @@
         <option value="$PROJECT_DIR$/src/Encrypt/BlowFish.java" />
         <option value="$PROJECT_DIR$/src/Encrypt/FileClass.java" />
         <option value="$PROJECT_DIR$/src/Encrypt/RandomNumberTables.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -97,7 +113,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="974" />
     <option name="height" value="1047" />
@@ -289,14 +305,15 @@
       <workItem from="1512326050270" duration="34000" />
       <workItem from="1512326141812" duration="3000" />
       <workItem from="1512332332214" duration="1239000" />
+      <workItem from="1512335487002" duration="43000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27050000" />
+    <option name="totallyTimeSpent" value="27093000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="974" height="1047" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -305,8 +322,8 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17168339" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -316,8 +333,8 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918116" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39918116" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -389,6 +406,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Encrypt/RandomNumberTables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="35" lean-forward="false" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Encrypt/BlowFish.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3553">
+          <caret line="209" column="17" lean-forward="false" selection-start-line="209" selection-start-column="17" selection-end-line="209" selection-end-column="17" />
+          <folding>
+            <element signature="method#setupKey#0;class#BlowFish#0" expanded="false" />
+            <element signature="method#encipher#0;class#BlowFish#0" expanded="false" />
+            <element signature="method#decipher#0;class#BlowFish#0" expanded="false" />
+            <element signature="method#F#0;class#BlowFish#0" expanded="false" />
+            <element signature="method#encryptBlock64#0;class#BlowFish#0" expanded="false" />
+            <element signature="method#setBlock#0;class#BlowFish#0" expanded="false" />
+            <element signature="method#decryptBlock64#0;class#BlowFish#0" expanded="false" />
+            <element signature="e#6766#6767#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
+            <element signature="method#bytesToLong#0;class#BlowFish#0" expanded="false" />
+            <element signature="method#longToBytes#0;class#BlowFish#0" expanded="false" />
+            <element signature="method#byte2int#0;class#BlowFish#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Encrypt/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="63" lean-forward="false" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
+          <folding>
+            <element signature="method#main#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Encrypt/FileClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
+          <folding>
+            <element signature="method#FileClass#0;class#FileClass#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Encrypt/BlowFish.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1156">
@@ -401,6 +467,8 @@
             <element signature="method#encryptBlock64#0;class#BlowFish#0" expanded="false" />
             <element signature="method#setBlock#0;class#BlowFish#0" expanded="false" />
             <element signature="method#decryptBlock64#0;class#BlowFish#0" expanded="false" />
+            <element signature="e#6766#6767#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
             <element signature="method#bytesToLong#0;class#BlowFish#0" expanded="false" />
             <element signature="method#longToBytes#0;class#BlowFish#0" expanded="false" />
             <element signature="method#byte2int#0;class#BlowFish#0" expanded="false" />
@@ -448,6 +516,8 @@
             <element signature="method#encryptBlock64#0;class#BlowFish#0" expanded="false" />
             <element signature="method#setBlock#0;class#BlowFish#0" expanded="false" />
             <element signature="method#decryptBlock64#0;class#BlowFish#0" expanded="false" />
+            <element signature="e#6766#6767#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
             <element signature="method#bytesToLong#0;class#BlowFish#0" expanded="false" />
             <element signature="method#longToBytes#0;class#BlowFish#0" expanded="false" />
             <element signature="method#byte2int#0;class#BlowFish#0" expanded="false" />
@@ -485,6 +555,8 @@
             <element signature="method#encryptBlock64#0;class#BlowFish#0" expanded="false" />
             <element signature="method#setBlock#0;class#BlowFish#0" expanded="false" />
             <element signature="method#decryptBlock64#0;class#BlowFish#0" expanded="false" />
+            <element signature="e#6766#6767#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
             <element signature="method#bytesToLong#0;class#BlowFish#0" expanded="false" />
             <element signature="method#longToBytes#0;class#BlowFish#0" expanded="false" />
             <element signature="method#byte2int#0;class#BlowFish#0" expanded="false" />
@@ -550,6 +622,8 @@
             <element signature="method#encryptBlock64#0;class#BlowFish#0" expanded="false" />
             <element signature="method#setBlock#0;class#BlowFish#0" expanded="false" />
             <element signature="method#decryptBlock64#0;class#BlowFish#0" expanded="false" />
+            <element signature="e#6766#6767#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
             <element signature="method#bytesToLong#0;class#BlowFish#0" expanded="false" />
             <element signature="method#longToBytes#0;class#BlowFish#0" expanded="false" />
             <element signature="method#byte2int#0;class#BlowFish#0" expanded="false" />
@@ -579,6 +653,8 @@
             <element signature="method#encryptBlock64#0;class#BlowFish#0" expanded="false" />
             <element signature="method#setBlock#0;class#BlowFish#0" expanded="false" />
             <element signature="method#decryptBlock64#0;class#BlowFish#0" expanded="false" />
+            <element signature="e#6766#6767#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
             <element signature="method#bytesToLong#0;class#BlowFish#0" expanded="false" />
             <element signature="method#longToBytes#0;class#BlowFish#0" expanded="false" />
             <element signature="method#byte2int#0;class#BlowFish#0" expanded="false" />
@@ -615,7 +691,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Encrypt/FileClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
+        <state relative-caret-position="0">
           <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
           <folding>
             <element signature="method#FileClass#0;class#FileClass#0" expanded="false" />
@@ -625,7 +701,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Encrypt/BlowFish.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
+        <state relative-caret-position="619">
           <caret line="209" column="17" lean-forward="false" selection-start-line="209" selection-start-column="17" selection-end-line="209" selection-end-column="17" />
           <folding>
             <element signature="method#setupKey#0;class#BlowFish#0" expanded="false" />
@@ -635,10 +711,20 @@
             <element signature="method#encryptBlock64#0;class#BlowFish#0" expanded="false" />
             <element signature="method#setBlock#0;class#BlowFish#0" expanded="false" />
             <element signature="method#decryptBlock64#0;class#BlowFish#0" expanded="false" />
+            <element signature="e#6766#6767#0" expanded="true" />
+            <element signature="e#6809#6810#0" expanded="true" />
             <element signature="method#bytesToLong#0;class#BlowFish#0" expanded="false" />
             <element signature="method#longToBytes#0;class#BlowFish#0" expanded="false" />
             <element signature="method#byte2int#0;class#BlowFish#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
