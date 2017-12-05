@@ -1,25 +1,21 @@
 package Encrypt;
 
 import java.io.UnsupportedEncodingException;
-import java.math.BigInteger;
-import java.security.SecureRandom;
 
 class BlowFish {
-    private int N = 16;
+
     private long xl;
     private long xr;
-    private static final long modulus = (long) Math.pow(2L, 32);
+    private int N = 16;
     private int ROUNDS = 16;
-    private byte[] byteIV;
     private long[] pi = new long[N + 2];
     private long[][] si = new long[4][256];
+    private static final long modulus = (long) Math.pow(2L, 32);
 
-    private SecureRandom random = new SecureRandom();
-
-    BlowFish(String string) throws UnsupportedEncodingException {
-        if (string.length() > 56)
+    BlowFish(byte[] openKey) throws UnsupportedEncodingException {
+        if (openKey.length > 56)
             throw new ArrayIndexOutOfBoundsException("Ключ должен быть не более 56 символов");
-        else if (string.length() < 4)
+        else if (openKey.length < 4)
             throw new StringIndexOutOfBoundsException("Ключ должен быть более 3 символов");
 
         System.arraycopy(RandomNumberTables.bf_P, 0, pi, 0, N + 2);
@@ -27,13 +23,10 @@ class BlowFish {
             System.arraycopy(RandomNumberTables.bf_S[i], 0, si[i], 0, 256);
         }
 
-        byte[] str2byte = string.getBytes();
-        int[] myIntsArrayKey = byte2int(str2byte);
-
-        setupKey(myIntsArrayKey, myIntsArrayKey.length);
+        setupKey(openKey, openKey.length);
     }
 
-    private void setupKey(int[] key, int length) {
+    private void setupKey(byte[] key, int length) {
         int j = 0;
         for (int i = 0; i < N + 2; i++) {
             pi[i] &= 0xffffffffL;
@@ -99,11 +92,7 @@ class BlowFish {
         return f;
     }
 
-    private String genIV() {
-        return new BigInteger(32, random).toString(16);
-    }
-
-    byte[] encryptBlock64(byte[] data) throws UnsupportedEncodingException {
+    byte[] encryptBlock64(byte[] data,byte[] IVbytes) throws UnsupportedEncodingException {
 
         byte[] bytesArrayForNextBlock = new byte[8];
         byte[] byteData = new byte[8];
@@ -118,12 +107,8 @@ class BlowFish {
         byte[] bytesOfOutputArray = new byte[length];
         System.arraycopy(bytesOfInputArray, 0, byteData, 0, 8);
 
-        String IV = genIV();
-        System.out.println("Случайный вектор инициализации: " + IV);
-        byteIV = IV.getBytes();
-
         for (int i = 0; i < 8; i++)
-            byteData[i] ^= byteIV[i];
+            byteData[i] ^= IVbytes[i];
         byteData = setBlock(byteData, "encrypt");
         System.arraycopy(byteData, 0, bytesOfOutputArray, 0, 8);
 
@@ -163,7 +148,7 @@ class BlowFish {
         return tmp;
     }
 
-    byte[] decryptBlock64(byte[] data) throws UnsupportedEncodingException {
+    byte[] decryptBlock64(byte[] data,byte[] IVbytes) throws UnsupportedEncodingException {
         byte[] inputBytesArray = new byte[data.length];
         byte[] arrayForNextBlock = new byte[8];
         byte[] arrayForNextPlusOneBlock = new byte[8];
@@ -177,7 +162,7 @@ class BlowFish {
         byteData1 = setBlock(byteData1, "decrypt");
 
         for (int j = 0; j < 8; j++) {
-            byteData1[j] ^= byteIV[j];
+            byteData1[j] ^= IVbytes[j];
         }
         System.arraycopy(byteData1, 0, inputBytesArray, 0, 8);
 
@@ -228,18 +213,5 @@ class BlowFish {
             array[i] = (byte) ((value >> (i * 8)) & 0xFF);
         }
         return array;
-    }
-
-    private int[] byte2int(byte[] bytesArray) {
-        int[] byte2int = new int[bytesArray.length / 4];
-        int offset = 0;
-        for (int i = 0; i < byte2int.length; i++) {
-            byte2int[i] = (bytesArray[3 + offset] & 0xFF) |
-                    ((bytesArray[2 + offset] & 0xFF) << 8) |
-                    ((bytesArray[1 + offset] & 0xFF) << 16) |
-                    ((bytesArray[offset] & 0xFF) << 24);
-            offset += 4;
-        }
-        return byte2int;
     }
 }
