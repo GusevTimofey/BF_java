@@ -25,8 +25,8 @@ public class JavaFxClass extends Component {
     @FXML
     private TextField bottom2line1;
 
-    private void printLine1Bottom2(byte[] arr1) {
-        bottom2line1.setText("Length of decipher data is: " + arr1.length);
+    private void printLine1Bottom2(int[] arr) {
+        bottom2line1.setText("Length of decipher data is: " + arr[0]);
     }
 
     private String readTextFromTextLineUnderBottomCipherOneFile() {
@@ -56,7 +56,6 @@ public class JavaFxClass extends Component {
 
         FileInputStream fileInputStream;
         FileOutputStream fileOutputStream;
-
         JFileChooser fileChooser = new JFileChooser();
 
         //Get from user OpenKey
@@ -88,6 +87,7 @@ public class JavaFxClass extends Component {
 
         BlowFish bf = new BlowFish(byteInputKey);
 
+        //Get file from user
         fileChooser.showOpenDialog(this);
         File inputDataFile = fileChooser.getSelectedFile();
 
@@ -100,6 +100,7 @@ public class JavaFxClass extends Component {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
         try {
             if (!IvFile.exists()) {
@@ -202,13 +203,35 @@ public class JavaFxClass extends Component {
             fileInputStream = new FileInputStream(inputExtensionFile);
             byte[] tmp = new byte[(int) inputExtensionFile.length()];
             fileInputStream.read(tmp);
+            fileInputStream.close();
+
             String extensionString = new String(tmp);
             fileOutputStream = new FileOutputStream("decryptedData" + extensionString);
-            printLine1Bottom2(tmp1);
-            fileOutputStream.write(tmp1, 0, tmp1.length);
+
+            byte[] tmp3 = new byte[tmp1.length - 8];
+            System.arraycopy(tmp1, 8, tmp3, 0, tmp3.length);
+
+            byte[] arrTmp1 = new byte[4];
+            System.arraycopy(tmp1,0,arrTmp1,0,4);
+            int[] k;
+            k = byte2int(arrTmp1);
+
+            printLine1Bottom2(k);
+            fileOutputStream.write(tmp3, 0, k[0]);
             fileOutputStream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private int[] byte2int(byte[] bytesArray) {
+        int[] byte2int = new int[bytesArray.length / 4];
+        int offset = 0;
+
+        for (int i = 0; i < byte2int.length; ++i)
+            byte2int[i] = bytesArray[3 + offset] & 255 | (bytesArray[2 + offset] & 255) << 8 | (bytesArray[1 + offset] & 255) << 16 | (bytesArray[offset] & 255) << 24;
+            offset += 4;
+
+        return byte2int;
     }
 }

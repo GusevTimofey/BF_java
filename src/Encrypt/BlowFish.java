@@ -12,18 +12,17 @@ class BlowFish {
     private long[][] si = new long[4][256];
     private static final long modulus = (long) Math.pow(2L, 32);
 
-    BlowFish(byte[] openKey) throws UnsupportedEncodingException {
-        if (openKey.length > 56)
-            throw new ArrayIndexOutOfBoundsException("Ключ должен быть не более 56 символов");
-        else if (openKey.length < 4)
-            throw new StringIndexOutOfBoundsException("Ключ должен быть более 3 символов");
+    BlowFish(byte[] key) throws UnsupportedEncodingException {
+        if (key.length > 56)
+            throw new ArrayIndexOutOfBoundsException("Key must be less than 56 symbols!");
+        else if (key.length < 4)
+            throw new StringIndexOutOfBoundsException("Key must be greater than 4 symbols!");
 
         System.arraycopy(RandomNumberTables.bf_P, 0, pi, 0, N + 2);
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++)
             System.arraycopy(RandomNumberTables.bf_S[i], 0, si[i], 0, 256);
-        }
 
-        setupKey(openKey, openKey.length);
+        setupKey(key, key.length);
     }
 
     private void setupKey(byte[] key, int length) {
@@ -92,31 +91,41 @@ class BlowFish {
         return f;
     }
 
-    byte[] encryptBlock64(byte[] data,byte[] IVbytes) throws UnsupportedEncodingException {
+    byte[] encryptBlock64(byte[] data, byte[] bytesIV) throws UnsupportedEncodingException {
 
         byte[] bytesArrayForNextBlock = new byte[8];
         byte[] byteData = new byte[8];
-        int length = data.length;
+        int length = data.length + 8;
 
         if (length % 8 != 0)
             while (length % 8 != 0)
                 length++;
 
+        byte[] tmpIntToByte;
         byte[] bytesOfInputArray = new byte[length];
-        System.arraycopy(data, 0, bytesOfInputArray, 0, data.length);
+        int[] tmpInt = new int[1];
+        tmpInt[0] = data.length;
+        tmpIntToByte = int2byte(tmpInt);
+        System.arraycopy(tmpIntToByte,0,bytesOfInputArray,0,4);
+        for (int i = 4; i < 8; i++)
+            bytesOfInputArray[i] = 0;
+        System.arraycopy(data, 0, bytesOfInputArray, 8, data.length);
         byte[] bytesOfOutputArray = new byte[length];
-        System.arraycopy(bytesOfInputArray, 0, byteData, 0, 8);
 
+        System.arraycopy(bytesOfInputArray,0,byteData,0,8);
+        byteData = setBlock(byteData,"encrypt");
+        System.arraycopy(byteData,0,bytesOfOutputArray,0,8);
+
+        System.arraycopy(bytesOfInputArray, 8, byteData, 0, 8);
         for (int i = 0; i < 8; i++)
-            byteData[i] ^= IVbytes[i];
+            byteData[i] ^= bytesIV[i];
         byteData = setBlock(byteData, "encrypt");
-        System.arraycopy(byteData, 0, bytesOfOutputArray, 0, 8);
+        System.arraycopy(byteData, 0, bytesOfOutputArray, 8, 8);
 
-        for (int i = 8; i < length; i += 8) {
+        for (int i = 16; i < length; i += 8) {
             System.arraycopy(bytesOfInputArray, i, bytesArrayForNextBlock, 0, 8);
-            for (int j = 0; j < 8; j++) {
+            for (int j = 0; j < 8; j++)
                 byteData[j] ^= bytesArrayForNextBlock[j];
-            }
             byteData = setBlock(byteData, "encrypt");
             System.arraycopy(byteData, 0, bytesOfOutputArray, i, 8);
         }
@@ -128,19 +137,13 @@ class BlowFish {
         byte[] tmp = new byte[8];
 
         if (mode.equals("encrypt")) {
-
             xl = unsignedLong(bytesToLong(block));
             xr = unsignedLong((bytesToLong(block)) >> 32);
-
             encipher();
-
         } else if (mode.equals("decrypt")) {
-
             xl = unsignedLong(bytesToLong(block));
             xr = unsignedLong((bytesToLong(block)) >> 32);
-
             decipher();
-
         }
         System.arraycopy(longToBytes(xl), 0, tmp, 0, 4);
         System.arraycopy(longToBytes(xr), 0, tmp, 4, 4);
@@ -148,44 +151,45 @@ class BlowFish {
         return tmp;
     }
 
-    byte[] decryptBlock64(byte[] data,byte[] IVbytes) throws UnsupportedEncodingException {
-        byte[] inputBytesArray = new byte[data.length];
+    byte[] decryptBlock64(byte[] data, byte[] bytesIV) throws UnsupportedEncodingException {
+
+        byte[] outputDataArray = new byte[data.length];
         byte[] arrayForNextBlock = new byte[8];
         byte[] arrayForNextPlusOneBlock = new byte[8];
         byte[] preLastBlock = new byte[8];
         byte[] byteData1 = new byte[8];
         byte[] myDecryptBytesArray = new byte[data.length];
+
         System.arraycopy(data, 0, myDecryptBytesArray, 0, data.length);
         System.arraycopy(myDecryptBytesArray, myDecryptBytesArray.length - 16, preLastBlock, 0, 8);
-        System.arraycopy(myDecryptBytesArray, 0, byteData1, 0, 8);
 
+        System.arraycopy(myDecryptBytesArray,0,byteData1,0,8);
+        byteData1 = setBlock(byteData1,"decrypt");
+        System.arraycopy(byteData1,0,outputDataArray,0,8);
+
+        System.arraycopy(myDecryptBytesArray, 8, byteData1, 0, 8);
         byteData1 = setBlock(byteData1, "decrypt");
+        for (int j = 0; j < 8; j++)
+            byteData1[j] ^= bytesIV[j];
+        System.arraycopy(byteData1, 0, outputDataArray, 8, 8);
 
-        for (int j = 0; j < 8; j++) {
-            byteData1[j] ^= IVbytes[j];
-        }
-        System.arraycopy(byteData1, 0, inputBytesArray, 0, 8);
-
-        for (int i = 0; i < data.length; i += 8) {
+        for (int i = 8; i < data.length; i += 8) {
             if (i != data.length - 8) {
                 System.arraycopy(myDecryptBytesArray, i, arrayForNextBlock, 0, 8);
                 System.arraycopy(myDecryptBytesArray, i + 8, arrayForNextPlusOneBlock, 0, 8);
-
                 arrayForNextPlusOneBlock = setBlock(arrayForNextPlusOneBlock, "decrypt");
-                for (int j = 0; j < 8; j++) {
+                for (int j = 0; j < 8; j++)
                     arrayForNextPlusOneBlock[j] ^= arrayForNextBlock[j];
-                }
-                System.arraycopy(arrayForNextPlusOneBlock, 0, inputBytesArray, i + 8, 8);
+                System.arraycopy(arrayForNextPlusOneBlock, 0, outputDataArray, i + 8, 8);
             } else {
                 System.arraycopy(myDecryptBytesArray, i, arrayForNextPlusOneBlock, 0, 8);
                 arrayForNextPlusOneBlock = setBlock(arrayForNextPlusOneBlock, "decrypt");
-                for (int j = 0; j < 8; j++) {
+                for (int j = 0; j < 8; j++)
                     arrayForNextPlusOneBlock[j] ^= preLastBlock[j];
-                }
-                System.arraycopy(arrayForNextPlusOneBlock, 0, inputBytesArray, i, 8);
+                System.arraycopy(arrayForNextPlusOneBlock, 0, outputDataArray, i, 8);
             }
         }
-        return inputBytesArray;
+        return outputDataArray;
     }
 
     private long xor(long a, long b) {
@@ -209,9 +213,24 @@ class BlowFish {
 
     private byte[] longToBytes(long value) {
         byte[] array = new byte[8];
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 8; i++)
             array[i] = (byte) ((value >> (i * 8)) & 0xFF);
-        }
+
         return array;
+    }
+
+    private byte[] int2byte(int[] src) {
+        int srcLength = src.length;
+        byte[] dst = new byte[srcLength << 2];
+
+        for (int i = 0; i < srcLength; ++i) {
+            int x = src[i];
+            int j = i << 2;
+            dst[j++] = (byte) (x >>> 24 & 255);
+            dst[j++] = (byte) (x >>> 16 & 255);
+            dst[j++] = (byte) (x >>> 8 & 255);
+            dst[j++] = (byte) (x & 255);
+        }
+        return dst;
     }
 }
