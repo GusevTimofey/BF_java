@@ -8,12 +8,12 @@
    <Button fx:id="cipherOneFile" layoutX="67.0" layoutY="31.0" mnemonicParsing="false" onAction="#cipherOneFile" prefHeight="60.0" prefWidth="116.0" text="Cipher one file" />
    <Button fx:id="decipherOneFile" layoutX="67.0" layoutY="299.0" mnemonicParsing="false" onAction="#decipherOneFile" prefHeight="60.0" prefWidth="116.0" text="Decipher File" />
    <TextField fx:id="UserKey" layoutX="67.0" layoutY="150.0" prefHeight="25.0" prefWidth="599.0" />
-   <TextField fx:id="InputTextForKey" editable="false" layoutX="67.0" layoutY="110.0" prefHeight="25.0" prefWidth="599.0" text="Enter user open key in the field below. Key must be greater than 4 symbols &amp;&amp; less than 56 symbols:" />
+   <TextField fx:id="InputTextForKey" editable="false" layoutX="67.0" layoutY="110.0" prefHeight="25.0" prefWidth="599.0" text="Enter user key in the field below. Key must be greater than 4 symbols &amp;&amp; less than 56 symbols:" />
    <TextField fx:id="bottom1line3" editable="false" layoutX="65.0" layoutY="186.0" prefHeight="25.0" prefWidth="599.0" />
    <TextField fx:id="bottom1field4" editable="false" layoutX="67.0" layoutY="223.0" prefHeight="25.0" prefWidth="599.0" />
    <TextField fx:id="bottom1line5" editable="false" layoutX="67.0" layoutY="257.0" prefHeight="25.0" prefWidth="599.0" />
-   <TextField fx:id="bottom2line1" editable="false" layoutX="67.0" layoutY="374.0" prefHeight="25.0" prefWidth="599.0" />
-   <TextField fx:id="successfully1" editable="false" layoutX="67.0" layoutY="407.0" prefHeight="25.0" prefWidth="599.0" />
-   <TextField editable="false" layoutX="67.0" layoutY="441.0" prefHeight="25.0" prefWidth="599.0" text="Enter key for decipher:" />
-   <TextField fx:id="keyForDec" layoutX="67.0" layoutY="477.0" prefHeight="25.0" prefWidth="599.0" />
+   <TextField fx:id="bottom2line1" editable="false" layoutX="65.0" layoutY="442.0" prefHeight="25.0" prefWidth="599.0" />
+   <TextField fx:id="successfully1" editable="false" layoutX="65.0" layoutY="477.0" prefHeight="25.0" prefWidth="599.0" />
+   <TextField editable="false" layoutX="67.0" layoutY="375.0" prefHeight="25.0" prefWidth="599.0" text="Enter key for decipher:" />
+   <TextField fx:id="keyForDec" layoutX="65.0" layoutY="409.0" prefHeight="25.0" prefWidth="599.0" />
 </AnchorPane>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/Encrypt/JavaFxClass.java" line="150" />
+    <bookmark url="file://$PROJECT_DIR$/src/Encrypt/JavaFxClass.java" line="149" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd2acbe2-359a-40c5-ac90-8ae61286371f" name="Default" comment="" />
@@ -30,8 +30,8 @@
       <file leaf-file-name="BlowFish.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Encrypt/BlowFish.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="541">
-              <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+            <state relative-caret-position="844">
+              <caret line="192" column="5" lean-forward="true" selection-start-line="192" selection-start-column="5" selection-end-line="192" selection-end-column="5" />
               <folding>
                 <element signature="method#BlowFish#0;class#BlowFish#0" expanded="false" />
                 <element signature="method#setupKey#0;class#BlowFish#0" expanded="false" />
@@ -54,8 +54,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -64,15 +64,14 @@
       <file leaf-file-name="JavaFxClass.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Encrypt/JavaFxClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="150" column="22" lean-forward="false" selection-start-line="150" selection-start-column="22" selection-end-line="150" selection-end-column="22" />
+            <state relative-caret-position="147">
+              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#printSucAfterDecrypt#0;class#JavaFxClass#0" expanded="false" />
-                <element signature="e#1008#1009#0" expanded="true" />
-                <element signature="e#1048#1049#0" expanded="true" />
-                <element signature="e#1087#1088#0" expanded="true" />
-                <element signature="e#1129#1130#0" expanded="true" />
+                <element signature="method#printFirstBottomText#0;class#JavaFxClass#0" expanded="false" />
+                <element signature="method#cipherOneFile#0;class#JavaFxClass#0" expanded="false" />
+                <element signature="method#decipherOneFile#0;class#JavaFxClass#0" expanded="false" />
                 <element signature="method#byte2int#0;class#JavaFxClass#0" expanded="false" />
               </folding>
             </state>
@@ -117,12 +116,12 @@
       <list>
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Encrypt/FileClass.java" />
-        <option value="$PROJECT_DIR$/src/Encrypt/BlowFish.java" />
         <option value="$PROJECT_DIR$/src/Encrypt/Main.java" />
         <option value="$PROJECT_DIR$/src/Encrypt/RandomNumberTables.java" />
         <option value="D:/googleChrome/Sort.java" />
         <option value="$USER_HOME$/AppData/Local/Temp/Rar$DIa0.763/Main.java" />
         <option value="$PROJECT_DIR$/src/Encrypt/JavaFxClass.fxml" />
+        <option value="$PROJECT_DIR$/src/Encrypt/BlowFish.java" />
         <option value="$PROJECT_DIR$/src/Encrypt/JavaFxClass.java" />
       </list>
     </option>
@@ -133,10 +132,30 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1031" />
-    <option name="width" value="896" />
+  <component name="ProjectFrameBounds" extendedState="1">
+    <option name="x" value="451" />
+    <option name="y" value="21" />
+    <option name="width" value="974" />
     <option name="height" value="1047" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpellCheckingInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -362,15 +381,15 @@
       <workItem from="1513522256058" duration="4384000" />
       <workItem from="1513875258961" duration="656000" />
       <workItem from="1514035182235" duration="2073000" />
-      <workItem from="1514059545183" duration="1759000" />
+      <workItem from="1514059545183" duration="5420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97412000" />
+    <option name="totallyTimeSpent" value="101073000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="451" y="21" width="974" height="1047" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -381,12 +400,12 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27027026" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32998884" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27364865" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13823858" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17803837" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3654267" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -479,7 +498,7 @@
           <option name="timeStamp" value="26" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="28" />
+      <option name="time" value="29" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -502,10 +521,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#printSucAfterDecrypt#0;class#JavaFxClass#0" expanded="false" />
-            <element signature="e#1008#1009#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="method#printFirstBottomText#0;class#JavaFxClass#0" expanded="false" />
+            <element signature="method#cipherOneFile#0;class#JavaFxClass#0" expanded="false" />
+            <element signature="method#decipherOneFile#0;class#JavaFxClass#0" expanded="false" />
             <element signature="method#byte2int#0;class#JavaFxClass#0" expanded="false" />
           </folding>
         </state>
@@ -567,10 +585,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#printSucAfterDecrypt#0;class#JavaFxClass#0" expanded="false" />
-            <element signature="e#1008#1009#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="method#printFirstBottomText#0;class#JavaFxClass#0" expanded="false" />
+            <element signature="method#cipherOneFile#0;class#JavaFxClass#0" expanded="false" />
+            <element signature="method#decipherOneFile#0;class#JavaFxClass#0" expanded="false" />
             <element signature="method#byte2int#0;class#JavaFxClass#0" expanded="false" />
           </folding>
         </state>
@@ -650,10 +667,9 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#printSucAfterDecrypt#0;class#JavaFxClass#0" expanded="false" />
-            <element signature="e#1008#1009#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="method#printFirstBottomText#0;class#JavaFxClass#0" expanded="false" />
+            <element signature="method#cipherOneFile#0;class#JavaFxClass#0" expanded="false" />
+            <element signature="method#decipherOneFile#0;class#JavaFxClass#0" expanded="false" />
             <element signature="method#byte2int#0;class#JavaFxClass#0" expanded="false" />
           </folding>
         </state>
@@ -945,17 +961,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Encrypt/JavaFxClass.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Encrypt/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -966,10 +971,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Encrypt/JavaFxClass.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="27" lean-forward="false" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Encrypt/BlowFish.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="541">
-          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+        <state relative-caret-position="844">
+          <caret line="192" column="5" lean-forward="true" selection-start-line="192" selection-start-column="5" selection-end-line="192" selection-end-column="5" />
           <folding>
             <element signature="method#BlowFish#0;class#BlowFish#0" expanded="false" />
             <element signature="method#setupKey#0;class#BlowFish#0" expanded="false" />
@@ -987,15 +1003,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Encrypt/JavaFxClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="150" column="22" lean-forward="false" selection-start-line="150" selection-start-column="22" selection-end-line="150" selection-end-column="22" />
+        <state relative-caret-position="147">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#printSucAfterDecrypt#0;class#JavaFxClass#0" expanded="false" />
-            <element signature="e#1008#1009#0" expanded="true" />
-            <element signature="e#1048#1049#0" expanded="true" />
-            <element signature="e#1087#1088#0" expanded="true" />
-            <element signature="e#1129#1130#0" expanded="true" />
+            <element signature="method#printFirstBottomText#0;class#JavaFxClass#0" expanded="false" />
+            <element signature="method#cipherOneFile#0;class#JavaFxClass#0" expanded="false" />
+            <element signature="method#decipherOneFile#0;class#JavaFxClass#0" expanded="false" />
             <element signature="method#byte2int#0;class#JavaFxClass#0" expanded="false" />
           </folding>
         </state>

@@ -11,7 +11,6 @@ import java.security.SecureRandom;
 
 public class JavaFxClass extends Component {
     private byte[] txtByte;
-    private byte[] byteInputKey;
     private SecureRandom random = new SecureRandom();
 
     @FXML
@@ -31,7 +30,7 @@ public class JavaFxClass extends Component {
 
     private void printSucAfterDecrypt() {
         successfully1.setText("\n" +
-                "Successfully!");
+                "fine");
     }
 
     private void printLine1Bottom2(int[] arr) {
@@ -42,7 +41,7 @@ public class JavaFxClass extends Component {
         return UserKey.getText();
     }
 
-    private String readFromDecText(){
+    private String readFromDecText() {
         return keyForDec.getText();
     }
 
