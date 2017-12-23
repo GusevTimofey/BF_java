@@ -2,8 +2,8 @@ package Encrypt;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.stage.FileChooser;
 
-import javax.swing.*;
 import java.awt.*;
 import java.io.*;
 import java.math.BigInteger;
@@ -24,6 +24,15 @@ public class JavaFxClass extends Component {
     private TextField bottom1line5;
     @FXML
     private TextField bottom2line1;
+    @FXML
+    private TextField successfully1;
+    @FXML
+    private TextField keyForDec;
+
+    private void printSucAfterDecrypt() {
+        successfully1.setText("\n" +
+                "Successfully!");
+    }
 
     private void printLine1Bottom2(int[] arr) {
         bottom2line1.setText("Length of decipher data is: " + arr[0]);
@@ -31,6 +40,10 @@ public class JavaFxClass extends Component {
 
     private String readTextFromTextLineUnderBottomCipherOneFile() {
         return UserKey.getText();
+    }
+
+    private String readFromDecText(){
+        return keyForDec.getText();
     }
 
     private void printFirstBottomText(String string) {
@@ -50,46 +63,20 @@ public class JavaFxClass extends Component {
     }
 
     public void cipherOneFile() throws IOException {
-        File inputOpenKey = new File("D:\\222\\BF_java\\BF_java", "OpenKey.txt");
         File inputExtensionFile = new File("D:\\222\\BF_java\\BF_java", "extensionFile.txt");
         File IvFile = new File("D:\\222\\BF_java\\BF_java", "IvFile.txt");
 
         FileInputStream fileInputStream;
         FileOutputStream fileOutputStream;
-        JFileChooser fileChooser = new JFileChooser();
+        FileChooser fileChooser = new FileChooser();
 
-        //Get from user OpenKey
-        try {
-            if (!inputOpenKey.exists()) {
-                try {
-                    inputOpenKey.createNewFile();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            String openKeyString = readTextFromTextLineUnderBottomCipherOneFile();
-            printFirstBottomText(openKeyString);
-            byte[] openKeyBytes = openKeyString.getBytes();
-            fileOutputStream = new FileOutputStream(inputOpenKey);
-            fileOutputStream.write(openKeyBytes, 0, openKeyBytes.length);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String openKeyString = readTextFromTextLineUnderBottomCipherOneFile();
+        printFirstBottomText(openKeyString);
+        byte[] openKeyBytes = openKeyString.getBytes();
 
-        try {
-            fileInputStream = new FileInputStream(inputOpenKey);
-            byteInputKey = new byte[(int) inputOpenKey.length()];
-            fileInputStream.read(byteInputKey);
-            fileInputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        BlowFish bf = new BlowFish(openKeyBytes);
 
-        BlowFish bf = new BlowFish(byteInputKey);
-
-        //Get file from user
-        fileChooser.showOpenDialog(this);
-        File inputDataFile = fileChooser.getSelectedFile();
+        File inputDataFile = fileChooser.showOpenDialog(null);
 
         try {
             fileInputStream = new FileInputStream(inputDataFile);
@@ -126,7 +113,7 @@ public class JavaFxClass extends Component {
 
         byte[] tmp1 = bf.encryptBlock64(txtByte, bytesIV);
 
-        String fileName = fileChooser.getName(inputDataFile);
+        String fileName = inputDataFile.getName();
         int indexOf = fileName.lastIndexOf('.');
         String fileExtension = fileName.substring(indexOf, fileName.length());
         byte[] extensionBytes = fileExtension.getBytes();
@@ -163,26 +150,17 @@ public class JavaFxClass extends Component {
 
     public void decipherOneFile() throws IOException {
         File inputExtensionFile = new File("D:\\222\\BF_java\\BF_java", "extensionFile.txt");
-        File inputOpenKey = new File("D:\\222\\BF_java\\BF_java", "OpenKey.txt");
         File IvFile = new File("D:\\222\\BF_java\\BF_java", "IvFile.txt");
 
         FileInputStream fileInputStream;
         FileOutputStream fileOutputStream;
-        JFileChooser fileChooser = new JFileChooser();
+        FileChooser fileChooser = new FileChooser();
 
-        try {
-            fileInputStream = new FileInputStream(inputOpenKey);
-            byteInputKey = new byte[(int) inputOpenKey.length()];
-            fileInputStream.read(byteInputKey);
-            fileInputStream.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        String openKeyString = readFromDecText();
+        byte[] openKeyBytes = openKeyString.getBytes();
+        BlowFish bf = new BlowFish(openKeyBytes);
 
-        BlowFish bf = new BlowFish(byteInputKey);
-
-        fileChooser.showOpenDialog(this);
-        File inputDataFile = fileChooser.getSelectedFile();
+        File inputDataFile = fileChooser.showOpenDialog(null);
 
         try {
             fileInputStream = new FileInputStream(inputDataFile);
@@ -212,11 +190,12 @@ public class JavaFxClass extends Component {
             System.arraycopy(tmp1, 8, tmp3, 0, tmp3.length);
 
             byte[] arrTmp1 = new byte[4];
-            System.arraycopy(tmp1,0,arrTmp1,0,4);
+            System.arraycopy(tmp1, 0, arrTmp1, 0, 4);
             int[] k;
             k = byte2int(arrTmp1);
 
             printLine1Bottom2(k);
+            printSucAfterDecrypt();
             fileOutputStream.write(tmp3, 0, k[0]);
             fileOutputStream.close();
         } catch (IOException e) {
@@ -230,7 +209,7 @@ public class JavaFxClass extends Component {
 
         for (int i = 0; i < byte2int.length; ++i)
             byte2int[i] = bytesArray[3 + offset] & 255 | (bytesArray[2 + offset] & 255) << 8 | (bytesArray[1 + offset] & 255) << 16 | (bytesArray[offset] & 255) << 24;
-            offset += 4;
+        offset += 4;
 
         return byte2int;
     }

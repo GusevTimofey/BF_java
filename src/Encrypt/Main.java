@@ -13,7 +13,7 @@ public class Main extends Application{
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("JavaFxClass.fxml"));
         primaryStage.setTitle("Encryptor");
-        primaryStage.setScene(new Scene(root, 800, 800));
+        primaryStage.setScene(new Scene(root, 800, 600));
         primaryStage.setResizable(false);
         primaryStage.show();
     }
@@ -22,3 +22,20 @@ public class Main extends Application{
         launch(args);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
